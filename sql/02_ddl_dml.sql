@@ -1,0 +1,14 @@
+USE nf3_lab;
+-- Tabela isolada. Este DROP apaga somente a tabela deste exercício.
+DROP TABLE IF EXISTS PRODUTO_EXERCICIO;
+CREATE TABLE PRODUTO_EXERCICIO(id INT PRIMARY KEY,preco DECIMAL(10,2) NOT NULL CHECK(preco>=0));
+INSERT INTO PRODUTO_EXERCICIO(id,preco) VALUES (1,100),(2,200);
+UPDATE PRODUTO_EXERCICIO SET preco=120 WHERE id=1;
+SELECT * FROM PRODUTO_EXERCICIO ORDER BY id;
+DELETE FROM PRODUTO_EXERCICIO WHERE id=1;
+ALTER TABLE PRODUTO_EXERCICIO ADD descricao VARCHAR(100) NOT NULL DEFAULT 'Sem descricao';
+SELECT * FROM PRODUTO_EXERCICIO;
+-- Antes de remover definitivamente, explique DELETE x TRUNCATE x DROP.
+DROP TABLE PRODUTO_EXERCICIO;
+-- Caso concreto da Q05: ambos os predicados precisam ser verdadeiros.
+SELECT rid,descricao,preco,saldo FROM ESTOQUE WHERE preco>500 AND saldo>0 ORDER BY rid;

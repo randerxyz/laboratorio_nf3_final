@@ -1,0 +1,7 @@
+{
+ "name":"NF3 - Banco de Dados",
+ "image":"mcr.microsoft.com/devcontainers/universal:2",
+ "features":{"ghcr.io/devcontainers/features/docker-in-docker:2":{}},
+ "postCreateCommand":"bash scripts/preparar.sh",
+ "portsAttributes":{"3307":{"label":"MySQL privado","onAutoForward":"ignore"}}
+}
